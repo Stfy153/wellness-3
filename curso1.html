@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Curso 1 - Introducción a la salud sexual</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f8f0f3;
+      padding-top: 60px;
+    }
+    h1, h2, h3 {
+      color: #880e4f;
+    }
+    .navbar {
+      background-color: #f8bbd0;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .nav-link, .navbar-brand {
+      color: #880e4f !important;
+      font-weight: bold;
+    }
+    .nav-link:hover {
+      color: #c2185b !important;
+    }
+    .btn-login-custom {
+      color: #880e4f;
+      background-color: transparent;
+      border: 2px solid #880e4f;
+      font-weight: bold;
+      border-radius: 8px;
+      padding: 6px 15px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .btn-login-custom:hover {
+      background-color: #880e4f;
+      color: white;
+    }
+    .container {
+      max-width: 1100px;
+    }
+    .content-section img, .concept-map {
+      width: 100%;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+    .navbar {
+  background: linear-gradient(270deg, #ffd1e1, #ffc1e3, #ffe4ec, #f8bbd0);
+  background-size: 800% 800%;
+  animation: gradientMove 10s ease infinite;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 0 15px rgba(255, 105, 180, 0.3), inset 0 0 8px rgba(255, 182, 193, 0.2);
+  border: 1px solid rgba(255, 182, 193, 0.5);
+  border-radius: 20px;
+  margin: 10px 20px;
+  padding: 12px 24px;
+  transition: all 0.2s ease-in-out;
+  z-index: 999;
+}
+
+/* Animación del fondo degradado */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  10% {
+    background-position: 10% 50%;
+  }
+  20% {
+    background-position: 20% 50%;
+  }
+  30% {
+    background-position: 30% 50%;
+  }
+  40% {
+    background-position: 40% 50%;
+  }
+  50% {
+    background-position: 50% 50%;
+  }
+  60% {
+    background-position: 60% 50%;
+  }
+  70% {
+    background-position: 70% 50%;
+  }
+  80% {
+    background-position: 80% 50%;
+  }
+  900% {
+    background-position: 90% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.navbar.scrolled {
+  background: rgba(255, 182, 193, 0.9);
+  box-shadow: 0 0 20px rgba(255, 64, 129, 0.4), 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.navbar-brand img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.navbar-nav .nav-link {
+  color: #880e4f !important;
+  font-weight: 600;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ec407a !important;
+}
+
+.navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background: #ec407a;
+  transition: width 0.3s ease;
+}
+.navbar-nav .nav-link:hover::after {
+  width: 100%;
+}
+
+.btn-outline-primary {
+  border-radius: 30px;
+  padding: 6px 16px;
+  border-color: #ec407a;
+  color: #ec407a;
+  transition: all 0.3s ease;
+}
+
+
+.navbar-toggler {
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
+
+.navbar-toggler-icon {
+  background-image: url('https://cdn-icons-png.flaticon.com/512/1828/1828859.png');
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+}
+
+    .icon-list {
+      list-style: none;
+      padding-left: 0;
+    }
+    .icon-list li {
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+    .icon-list li i {
+      margin-right: 10px;
+      color: #880e4f;
+    }
+    .progress-bar-vertical {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 15px;
+      height: 100vh;
+      background-color: #f8bbd0;
+      z-index: 1000;
+    }
+    .progress-fill {
+      width: 100%;
+      height: 0;
+      background-color: #c2185b;
+      transition: height 0.3s ease;
+    }
+    
+    .mia-box img {
+      width: 150px;
+      margin-bottom: 15px;
+    }
+    .btn-evaluar {
+      background-color: #880e4f;
+      color: white;
+      font-weight: bold;
+      margin: 40px 0;
+      padding: 12px 25px;
+      border-radius: 8px;
+      text-align: center;
+      display: inline-block;
+    }
+    .btn-evaluar:hover {
+      background-color: #d81b60;
+    }
+    @media (max-width: 768px) {
+      .mia-box {
+        position: fixed;
+        bottom: 20px;
+        right: 10px;
+        width: 100px;
+        padding: 10px;
+        z-index: 9999;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        border-radius: 15px;
+        background-color: #fff5f9;
+      }
+      .mia-box img {
+        width: 70px;
+        margin-bottom: 5px;
+      }
+      .mia-box h5, .mia-box p, .mia-box button {
+        font-size: 10px;
+      }
+      /* Para que el contenido no quede tapado */
+      .content-section {
+        padding-bottom: 140px;
+      }
+    }
+    .progress {
+      position: fixed;
+      bottom: 20px;
+      right: 10px;
+      width: 130px;
+      height: 16px;
+      margin-bottom: 0;
+      z-index: 998;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg fixed-top shadow-sm">
+    <div class="container">
+      <!-- Logo -->
+      <a class="navbar-brand fw-bold" href="index.html">
+        <img src="wellness logo.png" alt="Wellness Logo" class="navbar-logo me-2">
+      </a>
+  
+      <!-- Buscador con lupa -->
+      <div class="d-flex align-items-center me-3">
+        <form class="search-box position-relative me-2">
+          <input class="form-control ps-5 rounded-pill border-0 shadow-sm" type="search" id="searchInput" placeholder="Buscar...">
+          <i class="fas fa-search position-absolute text-danger" style="left: 15px; top: 50%; transform: translateY(-50%);"></i>
+        </form>
+      </div>
+  
+      <!-- Botón de menú lateral con ícono de corazón (solo en móviles) -->
+      <button class="btn btn-pink d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuLateral">
+        <i class="fas fa-heart fs-3 text-danger"></i>
+      </button>
+  
+      <!-- Menú normal en pantallas grandes -->
+      <div class="collapse navbar-collapse d-none d-lg-flex" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#cursos">Cursos</a></li>
+          <li class="nav-item" id="nav-register"><a class="nav-link" href="registro.html">Registrarse</a></li>
+        </ul>
+        <a href="login.html" id="nav-login" class="btn btn-outline-danger">Iniciar sesión</a>
+        <button id="nav-logout" class="btn btn-outline-danger" style="display: none;">Cerrar sesión</button>
+        <span id="usuario-nombre" class="ms-3 fw-bold text-dark"></span>
+      </div>
+    </div>
+  </nav>
+  <!-- Barra de progreso vertical -->
+  <div class="progress-bar-vertical">
+    <div id="progreso" class="progress-fill"></div>
+  </div>
+
+  <div class="row container mx-auto mt-4">
+    <!-- Contenido del curso -->
+    <div class="col-md-8 content-section">
+      <h2>¿Qué es la salud sexual?</h2>
+      <p>
+        La salud sexual es un estado de bienestar físico, emocional, mental y social relacionado con la sexualidad. Implica la capacidad de tener experiencias sexuales placenteras, libres de coerción, violencia o discriminación.
+      </p>
+      <img src="METODOS CORREGIDO.png" alt="Salud Sexual" />
+
+      <h3>Aspectos clave:</h3>
+      <ul class="icon-list">
+        <li><i class="fas fa-heartbeat"></i><strong> Bienestar físico:</strong> Ausencia de ETS y buena función sexual.</li>
+        <li><i class="fas fa-smile"></i><strong> Bienestar emocional:</strong> Autoestima y relaciones saludables.</li>
+        <li><i class="fas fa-scale-balanced"></i><strong> Derechos sexuales:</strong> Libertad, respeto y acceso a la información.</li>
+      </ul>
+
+      <h2 class="mt-5">Importancia de la educación sexual</h2>
+      <p>
+        Es un derecho fundamental. Permite tomar decisiones informadas, prevenir enfermedades y fortalecer el respeto mutuo en las relaciones.
+      </p>
+      <img src="MUÑÈCOS CONVERSANDO  (1).png" alt="Educación Sexual" />
+
+      <ul class="icon-list">
+        <li><i class="fas fa-check-circle"></i><strong> Prevención:</strong> ETS y embarazos no deseados.</li>
+        <li><i class="fas fa-lightbulb"></i><strong> Autonomía:</strong> Tomar decisiones seguras y responsables.</li>
+        <li><i class="fas fa-hands-helping"></i><strong> Respeto:</strong> Comunicación, consentimiento y empatía.</li>
+      </ul>
+
+      <h2 class="mt-5">Componentes clave de la salud sexual</h2>
+      <ul class="icon-list">
+        <li><i class="fas fa-handshake-angle"></i><strong> Consentimiento:</strong> Voluntario, claro y respetuoso.</li>
+        <li><i class="fas fa-comments"></i><strong> Comunicación:</strong> Diálogo abierto sobre límites y deseos.</li>
+        <li><i class="fas fa-shield-alt"></i><strong> Seguridad:</strong> Métodos anticonceptivos y protección.</li>
+      </ul>
+
+      <h2 class="mt-5">Mitos y realidades</h2>
+      <p>Combatir los mitos es clave para vivir una sexualidad libre de prejuicios.</p>
+      <img src="mitos.png" alt="Mitos y Realidades" />
+
+      <ul class="icon-list">
+        <li><i class="fas fa-times-circle"></i><strong> Masturbación es dañina:</strong> Falso, es sana y natural.</li>
+        <li><i class="fas fa-question-circle"></i><strong> La virginidad define tu valor:</strong> Falso, es un concepto social.</li>
+        <li><i class="fas fa-check"></i><strong> El condón solo es necesario con desconocidos:</strong> Falso, protege en todas las relaciones.</li>
+      </ul>
+
+      <!-- NUEVO CONTENIDO AMPLIADO -->
+
+
+      <h2 class="mt-5">Salud sexual y bienestar emocional</h2>
+      <p>
+        La salud sexual está estrechamente ligada al bienestar emocional. La comunicación, el respeto y la autoestima juegan un papel fundamental para una vida sexual sana y satisfactoria.
+      </p>
+      <ul class="icon-list">
+        <li><i class="fas fa-heart"></i> Importancia de expresar sentimientos y deseos.</li>
+        <li><i class="fas fa-brain"></i> Manejo del estrés y ansiedad en la sexualidad.</li>
+        <li><i class="fas fa-users"></i> Relaciones saludables y respeto mutuo.</li>
+      </ul>
+
+      <h2 class="mt-5">Diversidad sexual y derechos</h2>
+      <p>
+        La salud sexual incluye el reconocimiento y respeto a la diversidad sexual y de género. Todos tienen derecho a vivir su sexualidad sin discriminación ni violencia.
+      </p>
+      <ul class="icon-list">
+        <li><i class="fas fa-rainbow"></i> Identidades y orientaciones sexuales diversas.</li>
+        <li><i class="fas fa-balance-scale"></i> Derechos sexuales y reproductivos.</li>
+        <li><i class="fas fa-shield-virus"></i> Protección contra la discriminación y violencia.</li>
+      </ul>
+      <h2 class="mt-5">Autoexploración y conocimiento del cuerpo</h2>
+      <p>Conocer nuestro cuerpo es parte fundamental de la salud sexual. La autoexploración ayuda a detectar cambios, fomenta la autoestima y favorece relaciones más saludables.</p>
+      <ul class="icon-list">
+        <li><i class="fas fa-eye"></i> Fomentar el conocimiento corporal desde temprana edad.</li>
+        <li><i class="fas fa-search"></i> Reconocer señales de alerta o cambios físicos.</li>
+        <li><i class="fas fa-hand-holding-heart"></i> Conectar con el placer y la autonomía corporal.</li>
+      </ul>
+      <div class="my-4 p-4 rounded" style="background-color: #ffe4ec;">
+        <h3 class="mb-3 text-danger">¿Verdadero o Falso?</h3>
+        <div class="card mb-2">
+          <div class="card-body">
+            <p class="mb-1"><strong>“El condón solo es necesario con personas desconocidas.”</strong></p>
+            <button class="btn btn-outline-danger" onclick="alert('❌ Falso. El condón debe usarse en todas las relaciones sexuales para prevenir enfermedades y embarazos no deseados.')">Ver respuesta</button>
+          </div>
+        </div>
+        <div class="card mb-2">
+          <div class="card-body">
+            <p class="mb-1"><strong>“Todos tenemos derecho a información sexual clara y confiable.”</strong></p>
+            <button class="btn btn-outline-success" onclick="alert('✅ Verdadero. Es un derecho reconocido por la ONU y la OMS.')">Ver respuesta</button>
+          </div>
+        </div>
+      </div>
+      
+      <h2 class="mt-5">Comunicación asertiva en la sexualidad</h2>
+      <p>Hablar sobre sexualidad de manera abierta, clara y respetuosa fortalece las relaciones y permite establecer límites saludables.</p>
+      <ul class="icon-list">
+        <li><i class="fas fa-microphone-alt"></i> Aprender a decir lo que sentimos y pensamos sin miedo.</li>
+        <li><i class="fas fa-headset"></i> Escuchar activamente a la otra persona.</li>
+        <li><i class="fas fa-hands"></i> Negociar límites y deseos de manera empática.</li>
+      </ul>
+      <h2 class="mt-5">Sexualidad en la adolescencia</h2>
+      <p>La adolescencia es una etapa clave de cambios físicos, emocionales y sociales. Comprender esta etapa permite desarrollar una sexualidad responsable y saludable.</p>
+      <ul class="icon-list">
+        <li><i class="fas fa-user-graduate"></i> Cambios hormonales y corporales naturales.</li>
+        <li><i class="fas fa-people-arrows"></i> Desarrollo de vínculos afectivos y primeras relaciones.</li>
+        <li><i class="fas fa-gavel"></i> Reconocimiento de los derechos sexuales y reproductivos.</li>
+      </ul>
+      <h2 class="mt-5">Preguntas frecuentes sobre sexualidad</h2>
+      <p>A continuación respondemos algunas dudas comunes:</p>
+      <ul class="icon-list">
+        <li><i class="fas fa-question-circle"></i> ¿Es normal tener dudas o curiosidad sobre mi cuerpo? → Sí, y buscar respuestas confiables es una excelente forma de cuidarte.</li>
+        <li><i class="fas fa-question-circle"></i> ¿Qué pasa si no quiero tener relaciones sexuales? → Tienes derecho a decidir sobre tu cuerpo y tu tiempo.</li>
+        <li><i class="fas fa-question-circle"></i> ¿Puedo hablar con alguien si tengo miedo o confusión? → Sí, siempre es recomendable buscar apoyo en un adulto de confianza o profesional.</li>
+      </ul>
+                        
+      <h2 class="mt-5">Métodos de prevención y autocuidado</h2>
+      <p>
+        La prevención es clave para mantener una salud sexual óptima. Conocer y utilizar métodos anticonceptivos, además de prácticas seguras, ayuda a evitar enfermedades y embarazos no deseados.
+      </p>
+      <ul class="icon-list">
+        <li><i class="fas fa-prescription-bottle-alt"></i> Métodos hormonales y de barrera.</li>
+        <li><i class="fas fa-user-shield"></i> Autocuidado y chequeos médicos regulares.</li>
+        <li><i class="fas fa-comments"></i> Comunicación abierta con la pareja y profesionales.</li>
+      </ul>
+      <div class="p-4 my-4 rounded" style="background: #fffafc;">
+        <h3 class="text-danger">✅ Reto del día: autocuidado sexual</h3>
+        <ul class="icon-list">
+          <li><i class="fas fa-check"></i> Me informé sobre un nuevo método anticonceptivo.</li>
+          <li><i class="fas fa-check"></i> Reflexioné sobre el respeto en mis relaciones.</li>
+          <li><i class="fas fa-check"></i> Hablé con alguien de confianza sobre sexualidad.</li>
+        </ul>
+      </div>
+      
+   
+
+      <!-- Botón de evaluación -->
+      <a href="evaluacion1.html" class="btn-evaluar">📘 Evalúa tus conocimientos</a>
+    </div>
+
+    <!-- Columna de Mia -->
+    <div class="col-md-4">
+      <div class="mia-box">
+        <img src="personaje.png" alt="Rachel o Mia" />
+        <h5 class="text-danger">Rachel te acompaña</h5>
+        <p id="fraseMia" class="fst-italic">"Aprender sobre salud sexual es cuidar tu futuro."</p>
+        <button class="btn btn-outline-danger btn-sm mt-2" onclick="nuevaFrase()">
+          Cambiar frase
+        </button>
+        
+
+  <script>
+    const frases = [
+      "Aprender sobre salud sexual es cuidar tu futuro.",
+      "Tu cuerpo merece respeto y amor.",
+      "Infórmate, protégete, cuida de ti.",
+      "¡Qué bien que estés aquí aprendiendo!",
+      "Las decisiones informadas construyen tu bienestar."
+    ];
+    function nuevaFrase() {
+      const frase = frases[Math.floor(Math.random() * frases.length)];
+      document.getElementById("fraseMia").textContent = `"${frase}"`;
+    }
+
+    const progressFill = document.querySelector('.progress-fill');
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = (scrollTop / docHeight) * 100;
+      progressFill.style.height = `${Math.min(scrollPercent, 100)}vh`;
+    });
+
+    function cerrarSesion() {
+      localStorage.removeItem('logueado');
+      localStorage.removeItem('usuario');
+      window.location.href = 'login.html';
+    }
+
+    // Mostrar nombre y botón "Cerrar sesión" y ocultar "Iniciar sesión" si está logueado
+    document.addEventListener('DOMContentLoaded', () => {
+      const logueado = localStorage.getItem('logueado');
+      const usuario = JSON.parse(localStorage.getItem('usuario'));
+      const navLogin = document.getElementById('nav-login');
+      const navLogout = document.getElementById('nav-logout');
+      const usuarioNombre = document.getElementById('usuario-nombre');
+
+      if (logueado === 'true' && usuario) {
+        navLogin.style.display = 'none';
+        navLogout.style.display = 'inline-block';
+        usuarioNombre.textContent = `Hola, ${usuario.nombre}`;
+      } else {
+        navLogin.style.display = 'inline-block';
+        navLogout.style.display = 'none';
+        usuarioNombre.textContent = '';
+      }
+    });
+    document.getElementById('buscador').addEventListener('input', function () {
+  const filtro = this.value.toLowerCase();
+  const contenido = document.querySelector('.content-section');
+  
+  // Obtenemos todos los elementos de texto que queremos filtrar
+  const elementos = contenido.querySelectorAll('h2, h3, p, li, img');
+  
+  elementos.forEach(el => {
+    // Para las imágenes filtramos por atributo alt
+    const texto = el.tagName.toLowerCase() === 'img' ? el.alt.toLowerCase() : el.textContent.toLowerCase();
+    
+    if (texto.includes(filtro)) {
+      el.style.display = '';
+    } else {
+      el.style.display = 'none';
+    }
+  });
+});
+
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

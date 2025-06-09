@@ -1,0 +1,1572 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wellness - Inicio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init();</script>
+
+  <style>
+    body {
+  background-color: #fae2f2;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding-top: 100px;
+}
+.navbar {
+  background: linear-gradient(270deg, #fed0e0, #f7a1d0, #f6bdce, #f8bbd0);
+  background-size: 800% 800%;
+  animation: gradientMove 10s ease infinite;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 0 15px rgba(255, 105, 180, 0.3), inset 0 0 8px rgba(255, 182, 193, 0.2);
+  border: 1px solid rgba(255, 182, 193, 0.5);
+  border-radius: 20px;
+  margin: 10px 20px;
+  padding: 12px 24px;
+  transition: all 0.2s ease-in-out;
+  z-index: 999;
+}
+
+/* Animación del fondo degradado */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  10% {
+    background-position: 10% 50%;
+  }
+  20% {
+    background-position: 20% 50%;
+  }
+  30% {
+    background-position: 30% 50%;
+  }
+  40% {
+    background-position: 40% 50%;
+  }
+  50% {
+    background-position: 50% 50%;
+  }
+  60% {
+    background-position: 60% 50%;
+  }
+  70% {
+    background-position: 70% 50%;
+  }
+  80% {
+    background-position: 80% 50%;
+  }
+  900% {
+    background-position: 90% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+
+.navbar.scrolled {
+  background: rgba(255, 182, 193, 0.9);
+  box-shadow: 0 0 20px rgba(255, 64, 129, 0.4), 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.navbar-brand img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.navbar-nav .nav-link {
+  color: #880e4f !important;
+  font-weight: 600;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ec407a !important;
+}
+
+.navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background: #ec407a;
+  transition: width 0.3s ease;
+}
+.navbar-nav .nav-link:hover::after {
+  width: 100%;
+}
+
+.btn-outline-primary {
+  border-radius: 30px;
+  padding: 6px 16px;
+  border-color: #ec407a;
+  color: #ec407a;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+  background-color: #ec407a;
+  color: white;
+}
+
+
+.navbar-toggler {
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
+
+.navbar-toggler-icon {
+  background-image: url('https://cdn-icons-png.flaticon.com/512/1828/1828859.png');
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+}
+
+    .hero {
+      background: linear-gradient(to right, #f8bbd0, #ffe4e1);
+      padding: 100px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      
+    }
+
+/* Sección de Video de Introducción */
+.video-intro {
+  background-color: #fff5f9;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.video-intro h2 {
+  color: #d63384;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.video-intro video {
+  max-width: 90%;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Sección de Compañera de Aprendizaje */
+.companeros-section {
+  background: linear-gradient(to bottom, #fff5f9, #ffe4ec);
+  position: relative;
+}
+
+.companeros-section .card:hover {
+  transform: scale(1.02);
+  transition: 0.3s ease;
+}
+
+/* Animación de Aparición */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.rachel-flotante {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  width: 100px;
+  transition: transform 0.3s ease;
+  animation: parpadeo 6s infinite;
+}
+
+.rachel-flotante:hover {
+  transform: scale(1.05);
+}
+
+@keyframes parpadeo {
+  0%, 95%, 100% { opacity: 1; }
+  96%, 97%, 98%, 99% { opacity: 0.3; }
+}
+
+/* En móviles, Rachel se hace más pequeña y no tapa el contenido */
+@media (max-width: 768px) {
+  .rachel-flotante {
+    width: 100px;
+    bottom: 10px;
+    right: 10px;
+  }
+}
+
+/* Rachel Flotante */
+.rachel-flotante {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 80px;
+  z-index: 1000;
+  text-align: center;
+  background-color: transparent;
+  animation: fadeIn 1s ease;
+}
+
+.rachel-flotante img {
+  width: 100%;
+  max-width: 180px;
+}
+
+.rachel-frase {
+  background-color: #ffe4ec;
+  color: #880e4f;
+  font-size: 0.5rem;
+  border-radius: 10px;
+  padding: 8px 12px;
+  margin-top: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  font-style: italic;
+}
+
+/* Responsivo: Rachel más pequeña en dispositivos móviles */
+@media (max-width: 768px) {
+  .rachel-flotante {
+    width: 130px;
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .rachel-frase {
+    font-size: 0.60rem;
+    padding: 6px 8px;
+  }
+}
+
+    .hero-text {
+      max-width: 50%;
+      text-align: left;
+      color: #880e4f;
+    }
+    .hero-text h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+    .hero-text p {
+      font-size: 1.2rem;
+    }
+    .hero-video {
+      max-width: 45%;
+    }
+    .hero-video video {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .section-title {
+      text-align: center;
+      margin-top: 60px;
+      margin-bottom: 30px;
+      color: #ad1457;
+    }
+    .course-card {
+      background-color: #fff0f5;
+      border-radius: 20px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+      padding: 20px;
+      margin-bottom: 30px;
+      text-align: center;
+      color: #880e4f;
+    }
+    .content-section img {
+      width: 100%;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+    .course-card h5 {
+      color: #c2185b;
+      font-weight: bold;
+    }
+    .progress {
+      height: 20px;
+      background-color: #fce4ec;
+      border-radius: 10px;
+      margin: 10px 0;
+    }
+    .progress-bar {
+      background-color: #ec407a;
+    }
+    footer {
+      background-color: #f8bbd0;
+      padding: 20px;
+      text-align: center;
+      color: #880e4f;
+    }
+    .search-box {
+      max-width: 300px;
+    }
+    .disabled-link {
+      pointer-events: none;
+      opacity: 0.6;
+    }
+    .navbar-logo {
+      max-height: 40px;
+    }
+    .companeros-section {
+      background: linear-gradient(to bottom, #fff5f9, #ffe4ec);
+      position: relative;
+    }
+    .fade-in {
+     opacity: 0;
+     transform: translateY(30px);
+      animation: fadeInUp 1s ease-out forwards;
+    }
+
+
+
+.rachel-flotante img {
+  width: 100%;
+  max-width: 180px;
+  animation: parpadeo 2.5s infinite ease-in-out;
+}
+@keyframes flotar {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.rachel-flotante img {
+  width: 100%;
+  max-width: 180px;
+  animation: flotar 3s ease-in-out infinite;
+}
+.card, .btn, .nav-link {
+  transition: all 0.3s ease;
+}
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 16px rgba(214, 51, 132, 0.2);
+}
+
+
+    .card img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 160px;
+    object-fit: cover;
+  }
+  
+  .card h5 {
+    font-weight: bold;
+  }
+  .card p {
+    font-size: 0.95rem;
+  }
+
+  .companeros-section {
+    background-color: #fff5f9;
+  }
+  .companeros-section .card:hover {
+    transform: scale(1.02);
+    transition: 0.3s ease;
+  }
+  /* Fondo general de la sección */
+.mitos-realidad {
+  background-color: #fa9cc2;
+}
+
+/* Título de sección */
+.mitos-realidad .section-title {
+  color: #d63384;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+/* Botones de categorías */
+.mitos-realidad .btn-group .btn {
+  border-radius: 20px;
+  border-color: #f8bbd0;
+  background-color: #ffe4ec;
+  color: #d63384;
+  transition: all 0.3s ease;
+}
+
+.mitos-realidad .btn-group .btn:hover,
+.mitos-realidad .btn-group .btn.active {
+  background-color: #f8bbd0;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+
+.mitos-realidad .form-control {
+  border-radius: 0 30px 30px 0;
+  background-color: #fff;
+  border: 1px solid #f8bbd0;
+}
+
+/* Tarjetas */
+.mitos-realidad .card {
+  border-radius: 20px;
+  transition: transform 0.3s ease;
+  font-family: 'Roboto', sans-serif;
+}
+
+.mitos-realidad .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(214, 51, 132, 0.2);
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Encabezado del mito */
+.mitos-realidad .card-header.bg-danger {
+  background-color: #fd93b6 !important;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+/* Contenedor principal: mejor separación y max-width */
+#mitosContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Espaciado entre columnas en móviles y tablets */
+.mito-card {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Para que las tarjetas tengan la misma altura */
+.mito-card .card {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header rojo con ícono bien alineado */
+.mito-card .card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+/* Footer con botón y contenido colapsable */
+.mito-card .card-footer {
+  padding: 1rem;
+}
+
+/* Botón full width y con transiciones suaves */
+.mito-card .btn-outline-danger {
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-weight: 600;
+}
+.mito-card .btn-outline-danger:hover {
+  background-color: #dc3545;
+  color: white;
+}
+
+/* Cartas internas de Realidad más claras y con mejor padding */
+.mito-card .collapse .card {
+  border-width: 2px;
+}
+.mito-card .collapse .card-header {
+  font-weight: 700;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.mito-card .collapse .card-body {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  padding: 1rem;
+}
+
+/* Modal: mejorar padding y texto */
+#mitoModal .modal-body {
+  padding: 1.5rem;
+}
+
+#mitoModal .form-label {
+  font-weight: 600;
+}
+
+#mitoModal textarea {
+  resize: vertical;
+}
+
+/* Botón de envío modal */
+#mitoModal button[type="submit"] {
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+/* Responsive tweaks */
+@media (max-width: 767.98px) {
+  /* En móviles las tarjetas van full width y con margen abajo */
+  #mitosContainer > .mito-card {
+    margin-bottom: 1.5rem;
+  }
+}
+
+
+/* Botón 'Ver realidad' */
+.mitos-realidad .btn-outline-danger {
+  border-color: #f06292;
+  font-family: 'Roboto', sans-serif;
+  color: #f06292;
+  font-family: robo;
+  border-radius: 30px;
+}
+
+.mitos-realidad .btn-outline-danger:hover {
+  background-color: #fa8cb1;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Caja de realidad */
+.mitos-realidad .card.border-success {
+  border-radius: 15px;
+  font-family: 'Roboto', sans-serif;
+  border: 1px solid #81c784;
+}
+
+.mitos-realidad .card-header.bg-success {
+  background-color: #81c784 !important;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.mitos-realidad .card-body p {
+  font-size: 0.95rem;
+  font-family: 'Roboto', sans-serif;
+  color: #444;
+}
+.btn-pink {
+  background-color: transparent;
+  border: none;
+  font-size: 1.6rem;
+}
+.navbar-logo {
+  max-height: 40px;
+}
+.search-box input {
+  background-color: #ffffff;
+  border-radius: 30px;
+  border: 1px solid #f8bbd0;
+}
+
+/* Responsive ajustes extra */
+@media (max-width: 767px) {
+  .mitos-realidad .section-title {
+    font-size: 1.5rem;
+    font-family: 'Roboto', sans-serif;
+  }
+}
+/* Sección HERO */
+.hero {
+  background-color: #fff5f9;
+  padding: 3rem 0;
+  color: #000; /* letras negras */
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #f86bb2;
+}
+.search-box input::placeholder {
+  color: #c2185b;
+  opacity: 0.6;
+}
+
+.search-box input:focus {
+  outline: none;
+  box-shadow: 0 0 8px rgba(236, 64, 122, 0.5);
+}
+
+.search-box i {
+  pointer-events: none;
+}
+
+
+.hero p {
+  font-size: 1.2rem;
+  color: #000;
+}
+
+.hero-video video {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Sección ¿Te has preguntado...? */
+.bg-white {
+  background-color: #fff !important;
+  color: #000;
+}
+/* Estilo personalizado para los h5 dentro de la sección de preguntas */
+.bg-white .card h5.text-primary,
+#cursos .card h5.text-primary {
+  color: #d63384 !important;
+}
+
+.bg-white h2 {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #d63384;
+}
+
+.card h5 {
+  color: #000; /* título de la tarjeta en negro */
+}
+
+.card p {
+  color: #333; /* texto más legible */
+}
+
+.card {
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  background-color: #ffffff;
+}
+
+/* Botón "Conoce más" */
+.card .btn-outline-danger {
+  color: #d63384;
+  border-color: #d63384;
+  border-radius: 20px;
+}
+
+.card .btn-outline-danger:hover {
+  background-color: #d63384;
+  color: #fff;
+}
+
+/* Sección cursos con fondo */
+#cursos {
+  color: #000;
+}
+
+#cursos h2, #cursos p {
+  color: #000;
+  background-color: rgba(255, 255, 255, 0.8); /* para que se lea mejor sobre el fondo */
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+}
+
+.text-pregunta {
+  color: #d63384;
+  font-weight: bold;
+}
+
+  </style>
+</head>
+<body>
+  
+  <nav class="navbar navbar-expand-lg fixed-top shadow-sm">
+    <div class="container">
+      <!-- Logo -->
+      <a class="navbar-brand fw-bold" href="#">
+        <img src="wellness logo.png" alt="Wellness Logo" class="navbar-logo me-2">
+      </a>
+  
+      <!-- Buscador con lupa -->
+      <div class="d-flex align-items-center me-3">
+        <form class="search-box position-relative me-2">
+          <input type="text" id="buscador" placeholder="Buscar.." class="form-control mb-3" />
+
+          
+        </form>
+      </div>
+  
+      <!-- Botón de menú lateral con ícono de corazón (solo en móviles) -->
+      <button class="btn btn-pink d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuLateral">
+        <i class="fas fa-heart fs-3 text-danger"></i>
+      </button>
+  
+      <!-- Menú normal en pantallas grandes -->
+      <div class="collapse navbar-collapse d-none d-lg-flex" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#cursos">Cursos</a></li>
+          <li class="nav-item" id="nav-register"><a class="nav-link" href="registro.html">Registrarse</a></li>
+        </ul>
+        <a href="login.html" id="nav-login" class="btn btn-outline-danger">Iniciar sesión</a>
+        <button id="nav-logout" class="btn btn-outline-danger" style="display: none;">Cerrar sesión</button>
+        <span id="usuario-nombre" class="ms-3 fw-bold text-dark"></span>
+
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Offcanvas lateral -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="menuLateral">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title text-danger">Menú</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="fas fa-home me-1"></i>Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#cursos"><i class="fas fa-book me-1"></i>Cursos</a>
+        </li>
+        <li class="nav-item" id="nav-register">
+          <a class="nav-link" href="registro.html"><i class="fas fa-user-plus me-1"></i>Registrarse</a>
+        </li>
+      </ul>
+      
+      <a href="login.html" id="nav-login-mobile" class="btn btn-outline-danger w-100 mt-3">Iniciar sesión</a>
+      <button id="nav-logout-mobile" class="btn btn-outline-danger w-100 mt-2" style="display: none;">Cerrar sesión</button>
+    </div>
+  </div>
+  
+
+<!-- Menú lateral (offcanvas) -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="menuLateral">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title text-danger fw-bold">Menú</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="navbar-nav">
+      <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
+      <li class="nav-item"><a class="nav-link" href="#cursos">Cursos</a></li>
+      <li class="nav-item"><a class="nav-link" href="registro.html">Registrarse</a></li>
+    </ul>
+    <a href="login.html" id="nav-login-mobile" class="btn btn-outline-danger w-100 mt-3">Iniciar sesión</a>
+    <button id="nav-logout-mobile" class="btn btn-outline-danger w-100 mt-2" style="display: none;">Cerrar sesión</button>
+  </div>
+</div>
+
+<!-- Menú lateral en móviles (offcanvas) -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="menuLateral">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title text-danger fw-bold">Menú</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="navbar-nav">
+      <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
+      <li class="nav-item"><a class="nav-link" href="#cursos">Cursos</a></li>
+      <li class="nav-item" id="nav-register-mobile"><a class="nav-link" href="registro.html">Registrarse</a></li>
+    </ul>
+    <a href="login.html" id="nav-login-mobile" class="btn btn-outline-danger w-100 mt-3">Iniciar sesión</a>
+    <button id="nav-logout-mobile" class="btn btn-outline-danger w-100 mt-2" style="display: none;">Cerrar sesión</button>
+  </div>
+</div>
+
+  
+<section class="hero-video-section py-5">
+  <div class="container text-center">
+    <h2 class="section-title">Bienvenido a Wellness</h2>
+    <p class="mb-4 text-muted">Descubre el espacio donde aprender sobre salud sexual es seguro, claro y motivador.</p>
+
+    <div class="video-wrapper mx-auto position-relative"
+         style="max-width: 720px; aspect-ratio: 16 / 9; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+
+      <!-- Video oculto al principio hasta que se haga clic -->
+      <video id="videoWellness" 
+             playsinline 
+             controls 
+             style="width: 100%; height: 100%; object-fit: cover; display: none; border-radius: 20px;">
+        <source src="teaser.mp4" type="video/mp4">
+        Tu navegador no soporta el video.
+      </video>
+
+      <!-- Botón rosa de play -->
+      <button id="playButton"
+              style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+                     background-color: #ec407a; color: white; border: none; border-radius: 50%;
+                     width: 70px; height: 70px; font-size: 2rem; display: flex; align-items: center; justify-content: center;
+                     box-shadow: 0 4px 10px rgba(0,0,0,0.2); z-index: 2; cursor: pointer;">
+        <i class="fas fa-play"></i>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Font Awesome para el ícono -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+
+<script>
+  const playBtn = document.getElementById('playButton');
+  const video = document.getElementById('videoWellness');
+
+  playBtn.addEventListener('click', () => {
+    playBtn.style.display = 'none'; // Ocultar el botón
+    video.style.display = 'block';  // Mostrar video
+    video.play();
+  });
+</script>
+
+      
+      
+      <!-- Rachel Flotante -->
+  <div class="rachel-flotante">
+    <h2 class="section-title">
+      Hola, soy Rachel!!
+    </h2>
+    <img src="personaje.png" alt="Rachel flotante">
+    <p id="fraseMia" class="fst-italic text-secondary">"Recuerda: tu cuerpo merece respeto y amor cada día."</p>
+
+    <button class="btn btn-outline-danger btn-sm mt-2" onclick="mostrarFraseAleatoria()">Otra frase</button>
+
+  </div>
+
+ 
+
+  <section class="py-5 bg-white">
+    <div class="container">
+      <h2 class="text-center text-danger mb-5">¿Te has preguntado...?</h2>
+  
+      <div class="row g-4">
+        <!-- Pregunta Curso 1 -->
+        <div class="col-md-4">
+          <div class="card p-4 h-100 shadow-sm">
+            <h5 class="text-primary">¿Qué es el consentimiento sexual?</h5>
+            <p class="small text-muted">Descubre cómo se define, por qué es importante y cómo identificarlo en cualquier relación.</p>
+            <a href="curso1.html" class="btn btn-outline-danger mt-auto w-100">Conoce más</a>
+          </div>
+        </div>
+  
+        <!-- Pregunta Curso 3 -->
+        <div class="col-md-4">
+          <div class="card p-4 h-100 shadow-sm">
+            <h5 class="text-primary">¿Qué método anticonceptivo es el adecuado para mí?</h5>
+            <p class="small text-muted">Conoce los diferentes métodos y cuál se adapta mejor a tus necesidades.</p>
+            <a href="curso3.html" class="btn btn-outline-danger mt-auto w-100">Conoce más</a>
+          </div>
+        </div>
+  
+        <!-- Pregunta Curso 5 -->
+        <div class="col-md-4">
+          <div class="card p-4 h-100 shadow-sm">
+            <h5 class="text-primary">¿Por qué es importante la salud reproductiva en adolescentes?</h5>
+            <p class="small text-muted">Entérate cómo influye en tu bienestar físico, emocional y futuro.</p>
+            <a href="curso5.html" class="btn btn-outline-danger mt-auto w-100">Conoce más</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section id="cursos" class="py-5" style="
+  background-image: url('fondo.png'); 
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat;
+">
+  <div class="container">
+    <h2 class="text-center text-danger mb-4">Nuestros Cursos</h2>
+    <div class="row g-4">
+
+      <!-- Curso 1 -->
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
+        <div class="card h-100 shadow-sm" style="background-color: rgba(255, 255, 255, 0.95); position: relative;">
+
+          <!-- Contenedor de video con botón personalizado -->
+          <div class="video-container" style="position: relative;">
+            <video id="videoCurso1" class="card-img-top" style="border-radius: 0.5rem;" preload="metadata">
+              <source src="video.mp4" type="video/mp4">
+              Tu navegador no soporta videos HTML5.
+            </video>
+
+            <!-- Botón rosa de reproducción -->
+            <button onclick="playVideo('videoCurso1', this)" style="
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              background-color: #f06292;
+              color: white;
+              border: none;
+              border-radius: 50%;
+              width: 60px;
+              height: 60px;
+              font-size: 24px;
+              cursor: pointer;
+              box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+              transition: background-color 0.3s ease;
+              z-index: 2;
+            ">
+              ▶
+            </button>
+          </div>
+
+          <div class="card-body">
+            <h5 class="card-title text-primary">Introducción a la Salud Sexual</h5>
+            <p class="card-text">Conoce las bases del respeto, el cuidado del cuerpo, el consentimiento y la identidad sexual.</p>
+            <a href="curso1.html" class="btn btn-outline-danger w-100">Ver curso</a>
+          </div>
+        </div>
+      </div>
+
+     
+
+
+
+<!-- Curso 2 -->
+<div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+  <div class="card h-100 shadow-sm" style="background-color: rgba(255, 255, 255, 0.95);">
+    <img src="ets.png" class="card-img-top" alt="Curso 2">
+    <div class="card-body">
+      <h5 class="card-title text-primary">Enfermedades de Transmisión Sexual (ETS)</h5>
+      <p class="card-text">Aprende a prevenir, identificar y tratar las ETS con información científica y clara.</p>
+      <a href="curso2.html" class="btn btn-outline-danger w-100">Ver curso</a>
+    </div>
+  </div>
+</div>
+
+<!-- Curso 3 -->
+<div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+  <div class="card h-100 shadow-sm" style="background-color: rgba(255, 255, 255, 0.95);">
+    <img src="METODOS CORREGIDO.png" class="card-img-top" alt="Curso 3">
+    <div class="card-body">
+      <h5 class="card-title text-primary">Métodos Anticonceptivos</h5>
+      <p class="card-text">Explora los distintos métodos de protección, su uso correcto y cómo elegir el más adecuado.</p>
+      <a href="curso3.html" class="btn btn-outline-danger w-100">Ver curso</a>
+    </div>
+  </div>
+</div>
+
+<!-- Curso 4 -->
+<div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+  <div class="card h-100 shadow-sm" style="background-color: rgba(255, 255, 255, 0.95);">
+    <img src="salud sexusa.png" class="card-img-top" alt="Curso 4">
+    <div class="card-body">
+      <h5 class="card-title text-primary">Placer y Sexualidad</h5>
+      <p class="card-text">Hablemos del placer de manera libre, sana y respetuosa. Aprende a conocerte sin prejuicios.</p>
+      <a href="curso4.html" class="btn btn-outline-danger w-100">Ver curso</a>
+    </div>
+  </div>
+</div>
+
+<!-- Curso 5 -->
+<div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+  <div class="card h-100 shadow-sm" style="background-color: rgba(255, 255, 255, 0.95);">
+    <img src="salud reproductiva.png" class="card-img-top" alt="Curso 5">
+    <div class="card-body">
+      <h5 class="card-title text-primary">Salud Reproductiva</h5>
+      <p class="card-text">Todo lo que necesitas saber sobre embarazo, fertilidad, planificación y derechos reproductivos.</p>
+      <a href="curso5.html" class="btn btn-outline-danger w-100">Ver curso</a>
+    </div>
+  </div>
+</div>
+
+
+<section class="container my-5" id="calendario-salud">
+  <h2 class="text-center mb-4 text-danger">Calendario de Salud</h2>
+  <p class="text-center mb-5 text-muted">Conoce los momentos clave en el desarrollo corporal y la salud sexual para tomar decisiones informadas.</p>
+  
+  <div class="row">
+    <div class="col-md-4 mb-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-body">
+          <h5 class="card-title text-pregunta">Pubertad (8-16 años)</h5>
+          <p class="card-text">Etapa de grandes cambios físicos y emocionales. Aparecen el vello púbico, cambios en la voz, desarrollo de los senos o testículos, y comienza la menstruación en personas con útero.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-body">
+          <h5 class="card-title text-pregunta">Juventud (17-25 años)</h5>
+          <p class="card-text">Se consolida la identidad, los órganos sexuales están completamente desarrollados y es un buen momento para aprender sobre métodos anticonceptivos y consentimiento.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-body">
+          <h5 class="card-title text-pregunta">Edad adulta (25+ años)</h5>
+          <p class="card-text">Es importante realizar controles de salud sexual regularmente. En personas con útero, se recomienda el papanicolau y en personas con pene, autoexploración testicular.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Sección de Mitos vs. Realidad -->
+<section class="mitos-realidad py-5" style="background-color: #fff5f9;">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="section-title">
+        <i class="fas fa-lightbulb me-2 text-warning"></i>Mitos vs. Realidad
+      </h2>
+      <p class="text-muted">Desmitificando creencias populares sobre sexualidad y salud reproductiva</p>
+    </div>
+
+    <!-- Selector de categorías -->
+    <div class="d-flex justify-content-center mb-4">
+      <div class="btn-group" role="group">
+        <button type="button" class="btn btn-outline-danger active" data-category="todos">Todos</button>
+        <button type="button" class="btn btn-outline-danger" data-category="anticonceptivos">Anticonceptivos</button>
+        <button type="button" class="btn btn-outline-danger" data-category="ets">ETS</button>
+        <button type="button" class="btn btn-outline-danger" data-category="cuerpo">Tu cuerpo</button>
+        <button type="button" class="btn btn-outline-danger" data-category="relaciones">Relaciones</button>
+      </div>
+    </div>
+
+    
+    <!-- Tarjetas de Mitos vs Realidad -->
+    <div class="row g-4" id="mitosContainer">
+      
+      <!-- Mito 1 -->
+      <div class="col-md-6 col-lg-4 mito-card" data-category="anticonceptivos">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-header bg-danger text-white py-3">
+            <h5 class="mb-0">
+              <i class="fas fa-times-circle me-2"></i>MITO
+            </h5>
+          </div>
+          <div class="card-body">
+            <h6 class="card-title fw-bold">La primera vez no puedes quedar embarazada</h6>
+            <p class="card-text">Muchos creen que la primera relación sexual no puede resultar en embarazo.</p>
+          </div>
+          <div class="card-footer border-0 bg-light">
+            <button class="btn btn-outline-danger w-100" type="button" data-bs-toggle="collapse" 
+              data-bs-target="#realidad1">
+              Ver realidad
+            </button>
+            <div class="collapse mt-3" id="realidad1">
+              <div class="card border-success">
+                <div class="card-header bg-success text-white">
+                  <h5 class="mb-0">
+                    <i class="fas fa-check-circle me-2"></i>REALIDAD
+                  </h5>
+                </div>
+                <div class="card-body">
+                  <p>Puedes quedar embarazada en cualquier relación sexual sin protección, incluida la primera. 
+                  La fertilidad no depende de la experiencia sexual previa sino de factores biológicos como la ovulación.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Mito 2 -->
+      <div class="col-md-6 col-lg-4 mito-card" data-category="ets">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-header bg-danger text-white py-3">
+            <h5 class="mb-0">
+              <i class="fas fa-times-circle me-2"></i>MITO
+            </h5>
+          </div>
+          <div class="card-body">
+            <h6 class="card-title fw-bold">Las ETS siempre presentan síntomas visibles</h6>
+            <p class="card-text">Se cree que siempre hay síntomas evidentes cuando se contrae una ETS.</p>
+          </div>
+          <div class="card-footer border-0 bg-light">
+            <button class="btn btn-outline-danger w-100" type="button" data-bs-toggle="collapse" 
+              data-bs-target="#realidad2">
+              Ver realidad
+            </button>
+            <div class="collapse mt-3" id="realidad2">
+              <div class="card border-success">
+                <div class="card-header bg-success text-white">
+                  <h5 class="mb-0">
+                    <i class="fas fa-check-circle me-2"></i>REALIDAD
+                  </h5>
+                </div>
+                <div class="card-body">
+                  <p>Muchas ETS pueden no presentar síntomas durante semanas, meses o incluso años. 
+                  Algunas personas nunca desarrollan síntomas visibles pero aún pueden transmitir la infección. 
+                  Por eso son importantes las pruebas regulares.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Mito 3 -->
+      <div class="col-md-6 col-lg-4 mito-card" data-category="cuerpo">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-header bg-danger text-white py-3">
+            <h5 class="mb-0">
+              <i class="fas fa-times-circle me-2"></i>MITO
+            </h5>
+          </div>
+          <div class="card-body">
+            <h6 class="card-title fw-bold">La masturbación causa problemas de salud</h6>
+            <p class="card-text">Algunos creen que la masturbación puede causar acné, ceguera o problemas mentales.</p>
+          </div>
+          <div class="card-footer border-0 bg-light">
+            <button class="btn btn-outline-danger w-100" type="button" data-bs-toggle="collapse" 
+              data-bs-target="#realidad3">
+              Ver realidad
+            </button>
+            <div class="collapse mt-3" id="realidad3">
+              <div class="card border-success">
+                <div class="card-header bg-success text-white">
+                  <h5 class="mb-0">
+                    <i class="fas fa-check-circle me-2"></i>REALIDAD
+                  </h5>
+                </div>
+                <div class="card-body">
+                  <p>La masturbación es una actividad normal y saludable. No causa ningún tipo de daño físico o mental.
+                  De hecho, puede ayudar a liberar tensión, mejorar el sueño y conocer mejor tu propio cuerpo.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Mito 4 -->
+      <div class="col-md-6 col-lg-4 mito-card" data-category="relaciones">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-header bg-danger text-white py-3">
+            <h5 class="mb-0">
+              <i class="fas fa-times-circle me-2"></i>MITO
+            </h5>
+          </div>
+          <div class="card-body">
+            <h6 class="card-title fw-bold">Los celos demuestran amor</h6>
+            <p class="card-text">Muchos jóvenes creen que sentir celos o que tu pareja sea celosa es una señal de amor intenso.</p>
+          </div>
+          <div class="card-footer border-0 bg-light">
+            <button class="btn btn-outline-danger w-100" type="button" data-bs-toggle="collapse" 
+              data-bs-target="#realidad4">
+              Ver realidad
+            </button>
+            <div class="collapse mt-3" id="realidad4">
+              <div class="card border-success">
+                <div class="card-header bg-success text-white">
+                  <h5 class="mb-0">
+                    <i class="fas fa-check-circle me-2"></i>REALIDAD
+                  </h5>
+                </div>
+                <div class="card-body">
+                  <p>Los celos excesivos son una señal de inseguridad y pueden derivar en comportamientos controladores o posesivos.
+                  Una relación sana se basa en la confianza, el respeto y la comunicación, no en el control.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Mito 5 -->
+      <div class="col-md-6 col-lg-4 mito-card" data-category="anticonceptivos">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-header bg-danger text-white py-3">
+            <h5 class="mb-0">
+              <i class="fas fa-times-circle me-2"></i>MITO
+            </h5>
+          </div>
+          <div class="card-body">
+            <h6 class="card-title fw-bold">Las pastillas anticonceptivas engordan</h6>
+            <p class="card-text">Existe la creencia de que todas las pastillas anticonceptivas causan aumento de peso significativo.</p>
+          </div>
+          <div class="card-footer border-0 bg-light">
+            <button class="btn btn-outline-danger w-100" type="button" data-bs-toggle="collapse" 
+              data-bs-target="#realidad5">
+              Ver realidad
+            </button>
+            <div class="collapse mt-3" id="realidad5">
+              <div class="card border-success">
+                <div class="card-header bg-success text-white">
+                  <h5 class="mb-0">
+                    <i class="fas fa-check-circle me-2"></i>REALIDAD
+                  </h5>
+                </div>
+                <div class="card-body">
+                  <p>Los estudios científicos muestran que las pastillas anticonceptivas modernas no causan aumento de peso significativo.
+                  Algunas personas pueden experimentar retención de líquidos temporal o pequeños cambios, pero no es un efecto generalizado.
+                  Cada cuerpo reacciona de forma diferente.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Mito 6 -->
+      <div class="col-md-6 col-lg-4 mito-card" data-category="cuerpo">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-header bg-danger text-white py-3">
+            <h5 class="mb-0">
+              <i class="fas fa-times-circle me-2"></i>MITO
+            </h5>
+          </div>
+          <div class="card-body">
+            <h6 class="card-title fw-bold">Durante la menstruación no puedes hacer ejercicio</h6>
+            <p class="card-text">Muchas personas creen que hacer ejercicio durante la menstruación es perjudicial o imposible.</p>
+          </div>
+          <div class="card-footer border-0 bg-light">
+            <button class="btn btn-outline-danger w-100" type="button" data-bs-toggle="collapse" 
+              data-bs-target="#realidad6">
+              Ver realidad
+            </button>
+            <div class="collapse mt-3" id="realidad6">
+              <div class="card border-success">
+                <div class="card-header bg-success text-white">
+                  <h5 class="mb-0">
+                    <i class="fas fa-check-circle me-2"></i>REALIDAD
+                  </h5>
+                </div>
+                <div class="card-body">
+                  <p>Hacer ejercicio durante la menstruación no solo es posible sino que puede ser beneficioso.
+                  El ejercicio libera endorfinas que pueden ayudar a aliviar los cólicos y mejorar el estado de ánimo.
+                  Solo debes escuchar a tu cuerpo y adaptar la intensidad si lo necesitas.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Sección para sugerir un mito -->
+    <div class="row mt-5">
+      <div class="col-lg-8 mx-auto">
+        <div class="card border-0 shadow-sm">
+          <div class="card-body p-4 text-center">
+            <h5 class="mb-3">¿Conoces algún mito sobre sexualidad?</h5>
+            <p class="text-muted mb-4">Compártelo con nosotros y nuestro equipo de profesionales investigará la realidad detrás de él</p>
+            <button class="btn btn-danger px-4 py-2" data-bs-toggle="modal" data-bs-target="#mitoModal">
+              <i class="fas fa-plus-circle me-2"></i>Sugerir un mito
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modal para sugerir mito -->
+<div class="modal fade" id="mitoModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-danger text-white">
+        <h5 class="modal-title">Sugerir un mito</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="mitoForm">
+          <div class="mb-3">
+            <label for="mitoTexto" class="form-label">¿Cuál es el mito que has escuchado?</label>
+            <textarea class="form-control" id="mitoTexto" rows="3" required></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="mitoCategoria" class="form-label">Categoría</label>
+            <select class="form-select" id="mitoCategoria" required>
+              <option value="" selected disabled>Selecciona una categoría</option>
+              <option value="anticonceptivos">Anticonceptivos</option>
+              <option value="ets">ETS</option>
+              <option value="cuerpo">Tu cuerpo</option>
+              <option value="relaciones">Relaciones</option>
+              <option value="otro">Otro</option>
+            </select>
+          </div>
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" id="anonimo" checked>
+            <label class="form-check-label" for="anonimo">
+              Enviar de forma anónima
+            </label>
+          </div>
+          <button type="submit" class="btn btn-danger w-100">Enviar sugerencia</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="contacto" class="container my-5" data-aos="fade-up">
+  <h2 class="section-title">Contáctame</h2>
+  <p class="text-center mb-4" style="color:#880e4f; font-weight: 600;">
+    ¿Tienes dudas o quieres enviarme un mensaje? Completa el formulario y te responderé pronto.
+  </p>
+  <form id="contactForm" class="mx-auto" style="max-width:600px;" novalidate>
+    <div class="mb-3">
+      <label for="nombre" class="form-label" style="color:#ad1457; font-weight:600;">Nombre</label>
+      <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Tu nombre" required>
+      <div class="invalid-feedback">Por favor, ingresa tu nombre.</div>
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label" style="color:#ad1457; font-weight:600;">Correo electrónico</label>
+      <input type="email" class="form-control" id="email" name="email" placeholder="nombre@ejemplo.com" required>
+      <div class="invalid-feedback">Por favor, ingresa un correo válido.</div>
+    </div>
+    <div class="mb-3">
+      <label for="mensaje" class="form-label" style="color:#ad1457; font-weight:600;">Mensaje</label>
+      <textarea class="form-control" id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+      <div class="invalid-feedback">Por favor, escribe tu mensaje.</div>
+    </div>
+    <button type="submit" class="btn btn-outline-primary w-100">Enviar mensaje</button>
+  </form>
+  <div id="alertSuccess" class="alert alert-success mt-4 d-none" role="alert">
+    ¡Gracias por tu mensaje! Te responderé pronto.
+  </div>
+  <div id="alertError" class="alert alert-danger mt-4 d-none" role="alert">
+    Ocurrió un error al enviar tu mensaje. Intenta nuevamente.
+  </div>
+</section>
+
+<script>
+  // Validación Bootstrap
+  (function () {
+    'use strict'
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+
+      if (!form.checkValidity()) {
+        form.classList.add('was-validated');
+        return;
+      }
+
+      // Aquí iría el envío con fetch o AJAX a tu backend
+      // Simulamos envío exitoso:
+      document.getElementById('alertSuccess').classList.remove('d-none');
+      document.getElementById('alertError').classList.add('d-none');
+      form.reset();
+      form.classList.remove('was-validated');
+    }, false)
+  })()
+</script>
+
+  
+ 
+  
+  <footer>
+    <p>&copy; 2025 Wellness. Todos los derechos reservados.</p>
+    <div>
+      <a href="#" class="me-3"><i class="fab fa-facebook"></i></a>
+      <a href="#" class="me-3"><i class="fab fa-instagram"></i></a>
+    </div>
+  </footer>
+
+  <script>
+    // Array de frases para Rachel
+    const frasesMia = [
+      "Cada paso que das por tu bienestar es un acto de amor propio.",
+      "Explorar, aprender y cuidarte es tu derecho.",
+      "Tu cuerpo, tu decisión, tu poder.",
+      "La información te da libertad. ¡Sigue aprendiendo!",
+      "Lo que sabes hoy puede protegerte mañana."
+    ];
+
+    // Mostrar frase aleatoria
+    function mostrarFraseAleatoria() {
+      const frase = frasesMia[Math.floor(Math.random() * frasesMia.length)];
+      document.getElementById("fraseMia").textContent = `"${frase}"`;
+    }
+
+    // Función para búsqueda de cursos
+    function configurarBusqueda() {
+      document.getElementById('searchInput').addEventListener('input', function() {
+        const term = this.value.toLowerCase();
+        const cards = document.querySelectorAll('.course-card, .card');
+        cards.forEach(card => {
+          const contenido = card.textContent.toLowerCase();
+          const debeMostrar = contenido.includes(term);
+          // Busca el elemento padre más cercano que sea .col-lg-4 o .col-md-4
+          const elementoPadre = card.closest('.col-lg-4') || card.closest('.col-md-4') || card;
+          elementoPadre.style.display = debeMostrar ? 'block' : 'none';
+        });
+      });
+    }
+
+    // Función para controlar estado de sesión
+    function manejarEstadoSesion() {
+      const logueado = localStorage.getItem('logueado') === 'true';
+      const navLogin = document.getElementById('nav-login');
+      const navLogout = document.getElementById('nav-logout');
+      const navRegister = document.getElementById('nav-register');
+      const usuarioNombre = document.getElementById('usuario-nombre');
+
+      if (logueado) {
+        // Usuario ha iniciado sesión
+        const usuario = JSON.parse(localStorage.getItem('usuarioActual') || '{"nombre":"Usuario"}');
+        navLogin.style.display = 'none';
+        navLogout.style.display = 'inline-block';
+        navRegister.style.display = 'none'; // Ocultar enlace de registro
+        usuarioNombre.textContent = `Hola, ${usuario.nombre}`;
+      } else {
+        // Usuario no ha iniciado sesión
+        navLogin.style.display = 'inline-block';
+        navLogout.style.display = 'none';
+        navRegister.style.display = 'block'; // Mostrar enlace de registro
+        usuarioNombre.textContent = '';
+      }
+    }
+
+    // Función para cerrar sesión
+    function cerrarSesion() {
+      localStorage.removeItem('logueado');
+      localStorage.removeItem('usuarioActual');
+      localStorage.removeItem('user');
+      localStorage.setItem('loggedIn', 'false');
+      window.location.href = 'login.html';
+    }
+ 
+    // Inicialización al cargar la página
+    document.addEventListener('DOMContentLoaded', () => {
+      // Mostrar frase aleatoria
+      mostrarFraseAleatoria();
+      
+      // Configurar búsqueda
+      configurarBusqueda();
+      
+      // Manejar estado de sesión
+      manejarEstadoSesion();
+      
+      // Asignar evento al botón de cerrar sesión
+      const btnCerrarSesion = document.getElementById('nav-logout');
+      if (btnCerrarSesion) {
+        btnCerrarSesion.addEventListener('click', cerrarSesion);
+      }
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+    // Filtrar por categoría
+    const categoryButtons = document.querySelectorAll('[data-category]');
+    categoryButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const category = this.getAttribute('data-category');
+        
+        // Actualizar botones activos
+        categoryButtons.forEach(btn => btn.classList.remove('active'));
+        this.classList.add('active');
+        
+        // Filtrar tarjetas
+        const cards = document.querySelectorAll('.mito-card');
+        cards.forEach(card => {
+          if (category === 'todos' || card.getAttribute('data-category') === category) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+    const frasesRachel = [
+  "Recuerda: tu cuerpo merece respeto y amor cada día.",
+  "Explora tu bienestar con confianza.",
+  "Cada paso que das por ti es importante.",
+  "La información es tu mejor aliada.",
+  "Estás haciendo algo increíble al aprender más de ti.",
+  "Conócete, cuídate y valórate.",
+  "Tu salud sexual también es salud emocional.",
+  "Hablemos sin tabúes, con respeto y amor propio."
+];
+
+function mostrarFraseAleatoria() {
+  const frase = frasesRachel[Math.floor(Math.random() * frasesRachel.length)];
+  document.getElementById("fraseMia").textContent = `"${frase}"`;
+}
+
+window.addEventListener('DOMContentLoaded', mostrarFraseAleatoria);
+
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const usuario = JSON.parse(localStorage.getItem('usuario'));
+    const logueado = localStorage.getItem('logueado');
+    const usuarioNombre = document.getElementById('usuario-nombre');
+
+    if (logueado === 'true' && usuario && usuario.nombre) {
+      usuarioNombre.textContent = `Hola, ${usuario.nombre}`;
+    }
+  });
+
+    // Manejar el envío del formulario de mitos
+    const mitoForm = document.getElementById('mitoForm');
+    if (mitoForm) {
+      mitoForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Aquí se podría enviar a un backend
+        // Por ahora solo mostramos confirmación
+        
+        // Cerrar modal
+        const modal = bootstrap.Modal.getInstance(document.getElementById('mitoModal'));
+        modal.hide();
+        
+        // Mostrar mensaje de éxito
+        alert('¡Gracias por tu sugerencia! Nuestro equipo la revisará pronto.');
+        
+        // Resetear formulario
+        this.reset();
+      });
+    }
+    
+    // Comentario adicional: Esta sección podría integrarse con un backend para guardar las sugerencias
+    // y mostrar mitos reales enviados por otros adolescentes.
+  });
+
+  function playVideo(videoId, button) {
+    const video = document.getElementById(videoId);
+    video.controls = true;
+    video.play();
+    button.style.display = 'none';
+  }
+  
+   document.getElementById('buscador').addEventListener('input', function () {
+  const filtro = this.value.toLowerCase();
+  const contenido = document.querySelector('.content-section');
+  const elementos = contenido.querySelectorAll('h1, h2, h3, p, li, img');
+
+  elementos.forEach(el => {
+    const texto = el.tagName.toLowerCase() === 'img' ? el.alt.toLowerCase() : el.textContent.toLowerCase();
+    el.style.display = texto.includes(filtro) ? '' : 'none';
+  });
+});
+document.addEventListener('DOMContentLoaded', () => {
+  const logueado = localStorage.getItem('logueado');
+  const usuario = JSON.parse(localStorage.getItem('usuarioActual'));
+  const navLogin = document.getElementById('nav-login');
+  const navLogout = document.getElementById('nav-logout');
+  const usuarioNombre = document.getElementById('usuario-nombre');
+
+  if (logueado === 'true' && usuario) {
+    if (navLogin) navLogin.style.display = 'none';
+    if (navLogout) navLogout.style.display = 'inline-block';
+    if (usuarioNombre) usuarioNombre.textContent = `Hola, ${usuario.nombre}`;
+  } else {
+    if (navLogin) navLogin.style.display = 'inline-block';
+    if (navLogout) navLogout.style.display = 'none';
+    if (usuarioNombre) usuarioNombre.textContent = '';
+  }
+});
+
+</script>
+
+
+
+  <!-- Scripts de Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+</script>
+
+</body>
+</html>

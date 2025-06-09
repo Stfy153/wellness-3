@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Certificado de Finalización</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #fff0f5;
+      background-image: url('fondo.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    .certificado {
+      max-width: 900px;
+      margin: 50px auto;
+      background-color: white;
+      padding: 60px 40px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    .logo {
+      width: 120px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-family: 'Great Vibes';
+      font-size: 48px;
+      color: #880e4f;
+    }
+
+    .nombre, .id {
+      font-family: 'Great Vibes';
+      font-size: 30px;
+      color: #880e4f;
+      margin: 10px 0;
+    }
+
+    .mensaje {
+      margin-top: 30px;
+      font-size: 18px;
+      color: #444;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .fecha {
+      margin-top: 40px;
+      font-size: 16px;
+      color: #666;
+    }
+
+    .descargar {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .descargar button {
+      padding: 12px 25px;
+      font-size: 16px;
+      background-color: #ec407a;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .descargar button:hover {
+      background-color: #c2185b;
+    }
+
+    @media print {
+      .descargar {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="certificado" id="certificado">
+  <img src="wellness logo.png" alt="Logo Wellness" class="logo" onerror="this.style.display='none'">
+  <h1>Certificado de Finalización</h1>
+  <p>Otorgado a</p>
+  <div class="nombre" id="nombreUsuario">[Nombre del Usuario]</div>
+  <div class="id" id="idUsuario">ID: [123456789]</div>
+
+  <div class="mensaje">
+    Por haber completado satisfactoriamente los cursos de bienestar y salud sexual ofrecidos por Wellness.
+    Con compromiso y dedicación, ha adquirido conocimientos valiosos para su bienestar y el de su comunidad.
+  </div>
+
+  <div class="fecha" id="fechaHoy"></div>
+</div>
+
+<div class="descargar">
+  <button onclick="descargarPDF()">📄 Descargar Certificado</button>
+</div>
+
+<script>
+  document.getElementById("nombreUsuario").innerText = localStorage.getItem('nombreUsuario') || "Nombre no encontrado";
+  document.getElementById("idUsuario").innerText = "ID: " + (localStorage.getItem('idUsuario') || "No ID");
+
+  const fecha = new Date();
+  document.getElementById("fechaHoy").innerText = `Emitido el ${fecha.getDate()}/${fecha.getMonth() + 1}/${fecha.getFullYear()}`;
+
+  async function descargarPDF() {
+    const { jsPDF } = window.jspdf;
+    const certificado = document.getElementById("certificado");
+
+    await html2canvas(certificado, { scale: 2 }).then(canvas => {
+      const imgData = canvas.toDataURL("image/png");
+      const pdf = new jsPDF({
+        orientation: 'landscape',
+        unit: 'px',
+        format: [canvas.width, canvas.height]
+      });
+      pdf.addImage(imgData, 'PNG', 0, 0, canvas.width, canvas.height);
+      pdf.save("certificado_wellness.pdf");
+    });
+  }
+</script>
+
+</body>
+</html>

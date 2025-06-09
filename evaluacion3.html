@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Evaluación Curso 3</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>body { background: #fff0f5; font-family: sans-serif; padding: 20px; }</style>
+</head>
+<body>
+  <h1>Evaluación del Curso 3</h1>
+  <form id="formEval3">
+    <div id="preguntas">
+      <p>1. ¿Qué es un método anticonceptivo? <input type="text" class="form-control" /></p>
+      <p>2. ¿Cuáles son los métodos de barrera? <input type="text" class="form-control" /></p>
+      <p>3. ¿Qué métodos hormonales existen? <input type="text" class="form-control" /></p>
+      <p>4. ¿Qué es el DIU? <input type="text" class="form-control" /></p>
+      <p>5. ¿Qué método previene ETS? <input type="text" class="form-control" /></p>
+      <p>6. ¿Hay efectos secundarios? <input type="text" class="form-control" /></p>
+      <p>7. ¿Cuándo consultar un médico? <input type="text" class="form-control" /></p>
+      <p>8. ¿Son todos los métodos reversibles? <input type="text" class="form-control" /></p>
+      <p>9. ¿Qué método prefieren adolescentes? <input type="text" class="form-control" /></p>
+      <p>10. ¿Cuál es más efectivo? <input type="text" class="form-control" /></p>
+    </div>
+    <button type="button" class="btn btn-primary" onclick="calificar()">Enviar</button>
+    <div id="resultado" class="mt-3"></div>
+    <a href="curso4.html" class="btn btn-success mt-3 d-none" id="siguiente">Ir al siguiente curso</a>
+  </form>
+  <script>
+    function calificar() {
+      const inputs = document.querySelectorAll('#formEval3 input');
+      let correctas = 0;
+      inputs.forEach(i => { if(i.value.trim() !== '') correctas++; });
+      let resultado = document.getElementById('resultado');
+      resultado.innerHTML = "Tu puntaje: " + correctas + "/10";
+      if (correctas >= 7) {
+        document.getElementById('siguiente').classList.remove('d-none');
+      }
+    }
+  </script>
+</body>
+</html>

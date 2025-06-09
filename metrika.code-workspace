@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../metrika"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "diseño wellness"
+	}
+}
